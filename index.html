@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prasenjit Baruah | Portfolio</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <style>
+    :root {
+      --primary-color: #3366ff;
+      --bg-light: #f9fafc;
+      --bg-white: #ffffff;
+      --text-dark: #333333;
+      --text-muted: #666666;
+      --border-radius: 8px;
+      --transition: 0.3s ease;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+    }
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background-color: var(--bg-white);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      z-index: 10;
+    }
+    header h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      color: var(--primary-color);
+    }
+    nav a {
+      margin-left: 1.5rem;
+      color: var(--text-dark);
+      transition: color var(--transition);
+    }
+    nav a:hover {
+      color: var(--primary-color);
+    }
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+    .hero-text {
+      flex: 1;
+      min-width: 280px;
+    }
+    .hero-text h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary-color);
+    }
+    .hero-text h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: var(--text-muted);
+    }
+    .hero-text p {
+      max-width: 500px;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+    .buttons a {
+      display: inline-block;
+      margin-right: 1rem;
+      padding: 0.7rem 1.5rem;
+      border: 2px solid var(--primary-color);
+      border-radius: var(--border-radius);
+      color: var(--primary-color);
+      transition: background var(--transition), color var(--transition);
+    }
+    .buttons a.primary {
+      background-color: var(--primary-color);
+      color: #fff;
+    }
+    .buttons a:hover {
+      background-color: var(--primary-color);
+      color: #fff;
+    }
+    .hero-image {
+      flex: 1;
+      min-width: 280px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero-image .circle {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3366ff, #ffaa33);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 5rem;
+      color: #fff;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    h2.section-title {
+      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+    p.section-subtitle {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      color: var(--text-muted);
+    }
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-between;
+    }
+    .about-text, .skills-grid {
+      flex: 1;
+      min-width: 280px;
+    }
+    .about-text p {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+    }
+    .skill-card {
+      background-color: var(--bg-white);
+      padding: 1rem;
+      border-radius: var(--border-radius);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: transform var(--transition);
+    }
+    .skill-card:hover {
+      transform: translateY(-5px);
+    }
+    .skill-card i {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background-color: var(--bg-white);
+      border-radius: var(--border-radius);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      transition: transform var(--transition);
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card img {
+      width: 100%;
+      border-radius: var(--border-radius);
+      margin-bottom: 1rem;
+      object-fit: cover;
+      height: 180px;
+    }
+    .card h3 {
+      margin-bottom: 0.5rem;
+      color: var(--primary-color);
+    }
+    .card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+    .contact-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-between;
+    }
+    .contact-info, .contact-form {
+      flex: 1;
+      min-width: 280px;
+      background-color: var(--bg-white);
+      padding: 20px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .contact-info p {
+      margin-bottom: 1rem;
+    }
+    .social-links a {
+      color: var(--primary-color);
+      margin-right: 15px;
+      font-size: 1.5rem;
+      transition: color var(--transition);
+    }
+    .social-links a:hover {
+      color: #0033cc;
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+      border-radius: var(--border-radius);
+    }
+    .contact-form button {
+      padding: 0.75rem 1.5rem;
+      background-color: var(--primary-color);
+      color: #fff;
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: background var(--transition);
+    }
+    .contact-form button:hover {
+      background-color: #0033cc;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: var(--bg-white);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-image {
+        order: -1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Portfolio</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#travel">Travel</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <h3>Hello, I'm</h3>
+      <h2>Prasenjit Baruah</h2>
+      <p>Beyond the finish line. A travel enthusiast and supply chain professional passionate about exploring the world and optimizing global networks.</p>
+      <div class="buttons">
+        <a href="#about" class="primary">Learn More</a>
+        <a href="#contact">Get In Touch</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="circle"><i class="fas fa-user"></i></div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <p class="section-subtitle">Get to know who I am and what I do</p>
+    <div class="about-content">
+      <div class="about-text">
+        <p>I'm a travel enthusiast who believes every journey tells a story. Exploring new places fuels my creativity and broadens my perspective. I combine my passion for travel with professional experience in supply chain management and analytics, bringing fresh ideas and global insights to every project.</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <i class="fas fa-shipping-fast"></i>
+          <p>Supply Chain Management</p>
+        </div>
+        <div class="skill-card">
+          <i class="fas fa-chart-line"></i>
+          <p>Data Analytics</p>
+        </div>
+        <div class="skill-card">
+          <i class="fas fa-truck-moving"></i>
+          <p>Logistics Planning</p>
+        </div>
+        <div class="skill-card">
+          <i class="fas fa-project-diagram"></i>
+          <p>Project Management</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="projects">
+    <h2 class="section-title">Projects</h2>
+    <p class="section-subtitle">A selection of my professional work and tools I built</p>
+    <div class="grid">
+      <div class="card">
+        <img src="https://via.placeholder.com/400x200.png?text=Analytics+Dashboard" alt="Analytics Dashboard">
+        <h3>Analytics Dashboard</h3>
+        <p>Interactive dashboard for real-time supply chain insights and KPI monitoring, enhancing decision-making capabilities.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/400x200.png?text=Inventory+Tool" alt="Inventory Tool">
+        <h3>Inventory Optimization Tool</h3>
+        <p>Custom-built tool to balance stock levels, reduce costs, and improve fulfillment efficiency across multiple warehouses.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/400x200.png?text=Network+Redesign" alt="Network Redesign">
+        <h3>Logistics Network Redesign</h3>
+        <p>Data-driven project to optimize routes and distribution centers, reducing transit times and transport costs by 20%.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/400x200.png?text=Freight+Simulator" alt="Freight Simulator">
+        <h3>Freight Cost Simulator</h3>
+        <p>Interactive tool for modeling and comparing shipping options, helping teams select cost-effective transport strategies.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="travel">
+    <h2 class="section-title">Travel Adventures</h2>
+    <p class="section-subtitle">Exploring the world one destination at a time</p>
+    <div class="grid">
+      <div class="card">
+        <img src="https://via.placeholder.com/400x200.png?text=Himalayas" alt="Himalayas">
+        <h3>Himalayan Trek</h3>
+        <p>Challenging trails with breathtaking mountain views, local culture, and unforgettable sunrise vistas.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/400x200.png?text=Kyoto" alt="Kyoto">
+        <h3>Kyoto Exploration</h3>
+        <p>Historic temples, peaceful gardens, and traditional tea houses blending modern life with rich heritage.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/400x200.png?text=Dubai+Desert" alt="Dubai Desert">
+        <h3>Dubai Desert Safari</h3>
+        <p>Dune bashing, cultural performances, and starlit desert camps offering a unique Arabian adventure.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/400x200.png?text=Greek+Islands" alt="Greek Islands">
+        <h3>Greek Island Hopping</h3>
+        <p>Crystal-clear waters, whitewashed villages, and stunning sunsets across Santorini and Mykonos.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Get In Touch</h2>
+    <p class="section-subtitle">Let's discuss your next project or adventure</p>
+    <div class="contact-content">
+      <div class="contact-info">
+        <p>I'm always open to opportunities and connections. Whether you have a specific project in mind or just want to chat about travel and life, I'd love to hear from you.</p>
+        <p><i class="fas fa-envelope"></i> prasenjit@example.com</p>
+        <p><i class="fas fa-phone"></i> +65 1234 5678</p>
+        <p><i class="fas fa-map-marker-alt"></i> Singapore</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="contact-form">
+        <form>
+          <input type="text" placeholder="Full Name" required>
+          <input type="email" placeholder="Email Address" required>
+          <input type="text" placeholder="Subject">
+          <textarea rows="5" placeholder="Message"></textarea>
+          <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Prasenjit Baruah. All rights reserved.
+  </footer>
+
+</body>
+</html>
